@@ -1,0 +1,15 @@
+/* TEAM */
+Developer: Drain
+Contact: contact@chaptiva.app
+Site: https://chaptiva.app
+
+/* TECHNOLOGY */
+Hosting: GitHub Pages
+Pipeline: Whisper + generation pipeline (local + LLM fallback)
+Backend (planned): Azure Functions + Queue + Blob Storage
+
+/* PURPOSE */
+Automate creator video repurposing into multi-platform content packs.
+
+/* THANKS */
+Early beta creators & feedback contributors.
