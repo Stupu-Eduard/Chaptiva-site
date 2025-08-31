@@ -1,0 +1,5 @@
+Contact: mailto:contact@chaptiva.app
+Policy: https://chaptiva.app/privacy.html
+Expires: 2026-08-31T00:00:00Z
+Preferred-Languages: en
+Encryption: (Add a PGP key URL or fingerprint later if you want)
