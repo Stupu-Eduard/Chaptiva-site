@@ -1,92 +1,154 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-color-scheme="dark">
 <head>
 <meta charset="utf-8">
-<title>Chaptiva – Coming Soon</title>
+<title>Chaptiva – 2‑Minute Multi‑Platform Video Content Pack Generator</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Chaptiva – A new experience is on the way. Join early for updates.">
+<meta name="description" content="Turn any video (YouTube, TikTok, Instagram Reels, Shorts, long-form or short) into a ready-to-publish content pack: transcript, chapters (if long), hooks, title variants, Shorts/Reels ideas, captions & SEO copy. First video free.">
 <link rel="canonical" href="https://chaptiva.app/">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0d1117">
+<meta name="color-scheme" content="dark light">
 
 <!-- Favicons -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="alternate icon" href="/favicon.png" sizes="512x512">
 <link rel="apple-touch-icon" href="/favicon.png">
-<meta name="theme-color" content="#0d1117">
+<link rel="manifest" href="/manifest.webmanifest">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Chaptiva – Coming Soon">
-<meta property="og:description" content="A new experience is on the way. Sign up to hear when we launch.">
+<meta property="og:title" content="Chaptiva – Multi‑Platform Video Content Pack in 2 Minutes">
+<meta property="og:description" content="From any YouTube, TikTok, Reel or long-form video: transcript, chapters (if long), SEO description, hooks, title variants, Shorts ideas & bilingual captions. First video free.">
 <meta property="og:url" content="https://chaptiva.app/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://chaptiva.app/og-image.png">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Chaptiva – Coming Soon">
-<meta name="twitter:description" content="A new experience is on the way. Sign up to hear when we launch.">
+<meta name="twitter:title" content="Chaptiva – Multi‑Platform Video Content Pack">
+<meta name="twitter:description" content="Generate a full content pack: transcript, chapters, hooks, titles, Shorts/Reels ideas, captions & SEO copy. First video free.">
 <meta name="twitter:image" content="https://chaptiva.app/og-image.png">
 
-<meta name="robots" content="index,follow">
-
-<!-- (Optional) Manifest for PWA
-<link rel="manifest" href="/manifest.webmanifest">
--->
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SoftwareApplication",
+  "name":"Chaptiva",
+  "applicationCategory":"ContentCreationTool",
+  "operatingSystem":"Web",
+  "description":"Generates a multi-platform content pack from any creator video: transcript, chapters (if long), SEO copy, hooks, title variants, Shorts/Reels ideas & bilingual captions.",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "url":"https://chaptiva.app/"
+}
+</script>
 
 <style>
 :root {
-  --bg:#0d1117;
-  --panel:#161b22;
-  --accent:#4f8cff;
-  --accent-grad:linear-gradient(135deg,#4f8cff,#7b5fff 55%,#b86bff);
-  --text:#e6edf3;
-  --text-dim:#94a3b8;
-  --radius:14px;
-  --max:880px;
+  --bg:#0d1117; --bg-alt:#111a24;
+  --panel:#161f29; --panel-alt:#1b2734;
+  --border:#253340;
+  --accent-a:#4f8cff; --accent-b:#7b5fff; --accent-c:#b86bff;
+  --gradient:linear-gradient(135deg,var(--accent-a),var(--accent-b) 55%,var(--accent-c));
+  --text:#e6edf3; --text-dim:#94a3b8;
+  --ok:#35b37c; --warn:#f7b84d; --danger:#ff5563;
+  --radius:16px; --shadow:0 8px 28px -8px rgba(0,0,0,.55);
+  --max:1120px;
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
 }
-* {box-sizing:border-box;}
-html,body {margin:0;padding:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;}
-body {display:flex;flex-direction:column;min-height:100vh;}
-header {padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between;max-width:var(--max);margin:0 auto;width:100%;}
-.logo {font-size:1.125rem;font-weight:600;letter-spacing:.5px;background:var(--accent-grad);-webkit-background-clip:text;color:transparent;}
-nav a {color:var(--text-dim);text-decoration:none;font-size:.9rem;margin-left:1.25rem;position:relative;}
-nav a:focus, nav a:hover {color:var(--text);}
-main {flex:1;display:flex;align-items:center;justify-content:center;padding:3rem 1.25rem;}
-.hero {max-width:var(--max);width:100%;display:grid;gap:3rem;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));align-items:center;}
-.hero-text h1 {font-size:clamp(2.3rem,5.2vw,3.4rem);line-height:1.05;margin:0 0 1rem;font-weight:650;}
-.gradient {background:var(--accent-grad);-webkit-background-clip:text;color:transparent;}
-.hero-text p {margin:0 0 1.5rem;font-size:1.05rem;line-height:1.55;color:var(--text-dim);}
-.badge-row {display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.4rem;}
-.badge {background:#1f2530;border:1px solid #262f3b;color:var(--text-dim);padding:.4rem .7rem;border-radius:999px;font-size:.65rem;letter-spacing:.5px;text-transform:uppercase;font-weight:600;}
-.panel {background:var(--panel);border:1px solid #262f3b;padding:1.75rem 1.5rem;border-radius:var(--radius);box-shadow:0 4px 18px -6px rgba(0,0,0,.45);}
-.signup h2 {margin:0 0 .75rem;font-size:1.15rem;font-weight:600;}
-form {display:flex;flex-direction:column;gap:.85rem;}
-label {font-size:.7rem;letter-spacing:.5px;text-transform:uppercase;font-weight:600;color:var(--text-dim);}
-input[type=email] {width:100%;padding:.9rem 1rem;border:1px solid #2b3441;border-radius:10px;background:#0f141b;color:var(--text);font-size:.95rem;}
-input[type=email]::placeholder {color:#5b6b7d;}
-input[type=email]:focus {outline:2px solid #31527e;outline-offset:2px;}
-button {cursor:pointer;border:none;font-weight:600;font-size:.95rem;padding:.95rem 1.15rem;border-radius:10px;
-background:var(--accent-grad);color:#fff;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;transition:filter .25s;}
-button:hover,button:focus {filter:brightness(1.08);}
-button:focus {outline:2px solid #6d90ff;outline-offset:2px;}
-.note {font-size:.7rem;line-height:1.3;color:#64748b;}
-.preview-box {aspect-ratio:16/11;background:radial-gradient(circle at 30% 40%,#253040,#141a23 55%);border:1px solid #283342;border-radius:var(--radius);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:1.25rem;}
-.preview-box:before {content:"";position:absolute;inset:0;background:
-radial-gradient(circle at 80% 20%,rgba(79,140,255,.18),transparent 60%);}
-.preview-inner {text-align:center;max-width:320px;position:relative;z-index:1;}
-.preview-inner h3 {margin:.25rem 0 .6rem;font-size:1.1rem;font-weight:600;}
-.preview-inner p {margin:0;font-size:.85rem;line-height:1.4;color:var(--text-dim);}
-footer {padding:2rem 1.5rem 3rem;font-size:.75rem;color:#5b6b7d;text-align:center;}
-footer a {color:#7aa8ff;text-decoration:none;}
-footer a:hover,footer a:focus {text-decoration:underline;}
-.skip-link {
-  position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;}
+body{display:flex;flex-direction:column;min-height:100vh;}
+a{color:var(--accent-a);text-decoration:none;} a:hover,a:focus{text-decoration:underline;}
+h1,h2,h3,h4{font-weight:650;line-height:1.07;}
+p{line-height:1.55;margin:0 0 1rem;}
+/* Header */
+header{padding:1.05rem 1.55rem;display:flex;align-items:center;justify-content:space-between;max-width:var(--max);margin:0 auto;width:100%;}
+.logo{font-size:1.05rem;font-weight:600;letter-spacing:.55px;background:var(--gradient);-webkit-background-clip:text;color:transparent;}
+.top-nav{display:flex;gap:1.1rem;flex-wrap:wrap;align-items:center;}
+.top-nav a{color:var(--text-dim);font-size:.8rem;font-weight:500;}
+.top-nav a:hover{color:var(--text);}
+.cta-btn{background:var(--gradient);color:#fff;padding:.6rem .95rem;border-radius:10px;font-size:.78rem;font-weight:600;display:inline-flex;align-items:center;gap:.45rem;border:none;cursor:pointer;box-shadow:0 4px 14px -4px rgba(0,0,0,.45);transition:filter .25s;text-decoration:none;}
+.cta-btn:hover{filter:brightness(1.09);text-decoration:none;}
+/* Hero */
+.hero{max-width:var(--max);margin:0 auto;padding:3.9rem 1.6rem 3.1rem;display:grid;gap:3.2rem;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));align-items:start;}
+.badges{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1.15rem;}
+.badge{background:#1e2a36;border:1px solid var(--border);padding:.38rem .7rem;border-radius:999px;font-size:.56rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--text-dim);}
+.hero h1{font-size:clamp(2.4rem,5vw,3.4rem);margin:.15rem 0 1rem;}
+.gradient{background:var(--gradient);-webkit-background-clip:text;color:transparent;}
+.hero-lead{font-size:1.02rem;max-width:640px;color:var(--text-dim);margin:0 0 1.7rem;}
+.hero-side{background:radial-gradient(circle at 30% 40%,#283549,#141c25 62%);border:1px solid #2c3d4d;border-radius:var(--radius);padding:1.85rem 1.5rem;position:relative;overflow:hidden;min-height:320px;}
+.hero-side:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 18%,rgba(124,95,255,.18),transparent 65%);}
+.hero-side h3{margin:.1rem 0 .85rem;font-size:1.05rem;}
+.hero-side ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.6rem;}
+.hero-side li{font-size:.8rem;color:var(--text-dim);line-height:1.45;}
+/* Panels / Sections */
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:1.8rem 1.6rem;box-shadow:var(--shadow);}
+.section{max-width:var(--max);margin:0 auto;padding:0 1.6rem;}
+.section + .section{margin-top:3.5rem;}
+.section h2{margin:0 0 .85rem;font-size:1.95rem;}
+.section-lead{margin:0 0 1.55rem;font-size:.98rem;max-width:760px;color:var(--text-dim);}
+/* Features Cards */
+.cards{display:grid;gap:1.35rem;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.05rem 1.3rem;display:flex;flex-direction:column;gap:.55rem;position:relative;overflow:hidden;}
+.card:before{content:"";position:absolute;inset:0;opacity:0;pointer-events:none;background:radial-gradient(circle at 78% 12%,rgba(124,95,255,.22),transparent 70%);transition:opacity .45s;}
+.card:hover:before{opacity:.9;}
+.card h3{margin:0;font-size:.9rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:#d2d9e1;}
+.card p{margin:0;font-size:.78rem;color:var(--text-dim);line-height:1.5;}
+.icon{width:32px;height:32px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;background:linear-gradient(135deg,#253341,#1a242f);border:1px solid #2f3d4b;color:#9eb5cc;}
+/* Steps */
+.steps{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:1.2rem;}
+.step{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1rem;display:flex;flex-direction:column;gap:.45rem;}
+.step strong{font-size:.72rem;letter-spacing:.5px;color:#d0d7de;text-transform:uppercase;}
+.step p{margin:0;font-size:.75rem;color:var(--text-dim);line-height:1.45;}
+/* Example Pack */
+.example-wrap{display:grid;gap:1.8rem;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));align-items:start;margin-top:1.6rem;}
+.example-box{background:var(--panel-alt);border:1px solid var(--border);border-radius:16px;padding:1.35rem 1.15rem;display:flex;flex-direction:column;gap:.7rem;min-height:250px;}
+.placeholder-img{aspect-ratio:16/10;border:1px dashed #354656;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:.75rem;color:#5f7487;background:#14212c;}
+.code-sample{background:#101821;border:1px solid #263341;border-radius:10px;font-family:ui-monospace,Consolas,"SF Mono",Menlo,monospace;font-size:.7rem;padding:.75rem .85rem;line-height:1.4;overflow:auto;max-height:260px;color:#b9c4cf;}
+/* Pricing */
+.pricing-grid{display:grid;gap:1.45rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:1.35rem;}
+.price-card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:1.4rem 1.25rem;display:flex;flex-direction:column;gap:.9rem;position:relative;}
+.price-card.highlight{border:1px solid #5565ff;box-shadow:0 0 0 1px rgba(124,95,255,.3),0 10px 26px -10px rgba(0,0,0,.6);}
+.price-card h3{margin:.1rem 0 .25rem;font-size:1rem;}
+.price{font-size:2rem;font-weight:650;display:flex;align-items:baseline;gap:.35rem;}
+.price span{font-size:.7rem;font-weight:500;color:var(--text-dim);}
+ul.features{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.55rem;}
+ul.features li{font-size:.74rem;color:var(--text-dim);position:relative;padding-left:1.05rem;}
+ul.features li:before{content:"•";position:absolute;left:.1rem;color:#5fa0ff;}
+/* FAQ */
+.faq-grid{display:grid;gap:1rem;margin-top:1.25rem;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
+.faq{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:1rem .95rem;}
+.faq h3{margin:.1rem 0 .55rem;font-size:.95rem;}
+.faq p{margin:0;font-size:.74rem;color:var(--text-dim);line-height:1.5;}
+/* Forms */
+#process-form,#capture{display:flex;flex-direction:column;gap:.85rem;margin-top:.4rem;}
+label{font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.45px;color:var(--text-dim);}
+.inline{display:flex;gap:.75rem;flex-wrap:wrap;}
+input[type=email],input[type=url]{flex:1;min-width:240px;padding:.85rem .95rem;border:1px solid #2b3947;border-radius:11px;background:#0f151c;color:var(--text);font-size:.9rem;}
+input::placeholder{color:#5d6a78;}
+input:focus{outline:2px solid #3a5d89;outline-offset:2px;}
+.radio-row{display:flex;gap:1rem;flex-wrap:wrap;font-size:.7rem;color:var(--text-dim);}
+.radio-row label{display:flex;align-items:center;gap:.35rem;font-weight:500;text-transform:none;letter-spacing:0;font-size:.7rem;}
+button[type=submit]{border:none;border-radius:11px;padding:.9rem 1.15rem;font-weight:600;font-size:.88rem;background:var(--gradient);color:#fff;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:.45rem;transition:filter .25s;}
+button[type=submit]:hover{filter:brightness(1.1);}
+.msg{font-size:.62rem;line-height:1.3;color:#64748b;max-width:380px;}
+.error{color:var(--danger);font-size:.65rem;font-weight:600;display:none;}
+.success{color:var(--ok);font-size:.65rem;font-weight:600;display:none;}
+/* Footer */
+footer{margin-top:4.1rem;padding:2.4rem 1.6rem 3.2rem;background:#0b131a;border-top:1px solid var(--border);}
+footer .foot{max-width:var(--max);margin:0 auto;display:grid;gap:2.2rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
+footer nav{display:flex;flex-direction:column;gap:.45rem;}
+footer small{display:block;margin-top:1.5rem;font-size:.63rem;color:#5c6a79;}
+footer a{color:#8baefc;}
+footer a:hover{text-decoration:underline;}
+/* Accessibility */
+.skip-link{position:absolute;left:-999px;width:1px;height:1px;overflow:hidden;}
+.skip-link:focus{position:fixed;top:10px;left:10px;padding:.7rem 1rem;background:#182431;border-radius:10px;z-index:999;box-shadow:0 0 0 3px #4f8cff;color:#fff;text-decoration:none;}
+@media (max-width:780px){
+  .hero{padding:3.3rem 1.4rem 2.6rem;}
+  .hero-side{min-height:auto;}
 }
-.skip-link:focus {
-  position:static;width:auto;height:auto;padding:.6rem 1rem;background:#161b22;border-radius:8px;
-  box-shadow:0 0 0 3px #4f8cff;color:#fff;font-weight:600;
-}
-@media (max-width:740px){header{flex-wrap:wrap;gap:1rem;} .hero{gap:2.5rem;} }
 </style>
 </head>
 <body>
@@ -94,51 +156,367 @@ footer a:hover,footer a:focus {text-decoration:underline;}
 
 <header>
   <div class="logo" aria-label="Chaptiva">Chaptiva</div>
-  <nav aria-label="Main navigation">
-    <a href="#about">About</a>
-    <a href="#notify">Notify Me</a>
+  <nav class="top-nav" aria-label="Primary">
+    <a href="#features">Outputs</a>
+    <a href="#platform">Platform Adaptation</a>
+    <a href="#how">How It Works</a>
+    <a href="#example">Examples</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="#process" class="cta-btn">Process a Video</a>
   </nav>
 </header>
 
 <main id="main">
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-text">
-      <div class="badge-row" id="about">
-        <div class="badge">Early Access</div>
-        <div class="badge">Private Beta Soon</div>
-      </div>
-      <h1 id="hero-title"><span class="gradient">A smarter way</span><br>to engage & learn.</h1>
-      <p>We’re building something new at Chaptiva. Be among the first to explore it. Join the early list and get launch updates—no spam.</p>
 
-      <div class="panel signup" id="notify" aria-labelledby="signup-title">
-        <h2 id="signup-title">Get launch updates</h2>
-        <!-- Replace the form action with your real endpoint (Formspree / Basin / etc.) -->
-        <form action="https://example.com/placeholder" method="POST" onsubmit="alert('Form backend not connected yet. Replace the form action URL.'); return false;" novalidate>
-          <label for="email">Email</label>
-          <input id="email" type="email" name="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="email-note">
-          <button type="submit">Notify Me</button>
-          <div class="note" id="email-note">We’ll send only critical launch updates. Unsubscribe anytime.</div>
-        </form>
+  <!-- HERO -->
+  <section class="hero" id="hero" aria-labelledby="hero-title">
+    <div>
+      <div class="badges">
+        <div class="badge">Multi‑Platform</div>
+        <div class="badge">First Video Free</div>
+        <div class="badge">Long & Short Form</div>
       </div>
+      <h1 id="hero-title"><span class="gradient">Turn any creator video</span><br>into a ready‑to‑publish content pack in 2 minutes.</h1>
+      <p class="hero-lead">
+        YouTube tutorial, fitness breakdown, coding deep dive, TikTok tip, Instagram Reel—drop the link. Chaptiva returns: transcript, chapters (if long), SEO description (YouTube), multi‑platform hooks, title variants, Shorts/Reels clip ideas, bilingual captions & more. Build more content, spend less time repackaging.
+      </p>
+      <a href="#process" class="cta-btn">Try Your Free Slot</a>
     </div>
+    <aside class="hero-side" aria-labelledby="deliver-title">
+      <h3 id="deliver-title">What You Get</h3>
+      <ul>
+        <li>Transcript (clean, TXT + SRT EN + optional second language)</li>
+        <li>Chapters (auto if video ≥ ~8–10 min)</li>
+        <li>SEO description + keyword phrases (YouTube)</li>
+        <li>5 title variants & 5 hook/opening lines</li>
+        <li>5 Shorts / Reels / TikTok clip ideas (time‑indexed for long form)</li>
+        <li>Optional bilingual captions (initial EN + ES; more coming)</li>
+      </ul>
+    </aside>
+  </section>
 
-    <div class="preview-box" aria-hidden="true">
-      <div class="preview-inner">
-        <h3>Coming Soon</h3>
-        <p>A lightweight, focused experience designed to save you time and amplify results.</p>
+  <!-- PROCESS FORM -->
+  <section class="section" id="process" aria-labelledby="process-title">
+    <h2 id="process-title">Process a Video (Manual Beta)</h2>
+    <p class="section-lead">Week 1 = manual polish; automation is staging. Submit any public or unlisted video URL (YouTube, TikTok, Instagram Reel, Shorts). We’ll generate the pack and email it back if capacity allows.</p>
+    <div class="panel" style="max-width:720px;">
+      <form id="process-form" action="FORM_ENDPOINT_PROCESS" method="POST" novalidate>
+        <label for="youtube">Video URL (YouTube / TikTok / Instagram)</label>
+        <div class="inline">
+          <input id="video-url" name="video" type="url" placeholder="https://www.youtube.com/watch?v=..." required>
+        </div>
+        <label>Content Type (helps our pipeline)</label>
+        <div class="radio-row">
+          <label><input type="radio" name="content_type" value="long" checked> Long Form (≥10 min, enable chapters)</label>
+          <label><input type="radio" name="content_type" value="short"> Short Form (&lt;10 min, no chapters – booster outputs)</label>
+        </div>
+        <label for="proc-email">Email</label>
+        <div class="inline">
+          <input id="proc-email" name="email" type="email" placeholder="you@example.com" required>
+          <button type="submit">Request Pack</button>
+        </div>
+        <div class="error" id="proc-error">Enter a valid video link & email.</div>
+        <div class="success" id="proc-success">Submitted! If slot available we’ll send a pack soon.</div>
+        <p class="msg">We process a limited queue daily. Chapters appear only for sufficiently long videos.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- CORE OUTPUTS -->
+  <section class="section" id="features" aria-labelledby="features-title">
+    <h2 id="features-title">Core Pack Outputs</h2>
+    <p class="section-lead">Everything you usually craft manually—done at once.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">📝</div><h3>Transcript</h3>
+        <p>Clean transcript (TXT + SRT). Bilingual optional. Whisper based for balanced accuracy & cost.</p>
+      </div>
+      <div class="card">
+        <div class="icon">⏱</div><h3>Chapters</h3>
+        <p>Auto segmentation & 2–5 word titles (only for long videos). Timestamps calibrated to semantic shifts.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🔍</div><h3>SEO Description</h3>
+        <p>YouTube‑ready: 2 paragraphs + 5 keyword phrases extracted from topical density & intent signals.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎯</div><h3>Title Variants</h3>
+        <p>Benefit, curiosity, urgency, numeric & contrarian style variants. Pick, tweak, or A/B test.</p>
+      </div>
+      <div class="card">
+        <div class="icon">⚡</div><h3>Hook Lines</h3>
+        <p>Five micro openers (≤12 words) aligned to retention‑prime moments early in the video/text.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📱</div><h3>Shorts Ideas</h3>
+        <p>Five vertical clip concepts (with source timestamps for long form) to spin into TikTok / Reels / Shorts.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🌐</div><h3>Captions</h3>
+        <p>English plus optional second language (initial ES). Roadmap: FR / PT / DE based on demand.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🔒</div><h3>Local First</h3>
+        <p>Transcription & first‑pass generation local/low‑cost; heavier LLM calls only if necessary for refinement.</p>
       </div>
     </div>
   </section>
+
+  <!-- PLATFORM ADAPTATION -->
+  <section class="section" id="platform" aria-labelledby="platform-title">
+    <h2 id="platform-title">Platform Adaptation Layer</h2>
+    <p class="section-lead">Outputs are structured so you can instantly plug them into different channels.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">▶</div><h3>YouTube</h3>
+        <p>Chapters, SEO description, keyword phrases, title variants tuned for search discovery & click intent.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎬</div><h3>Shorts / Reels / TikTok</h3>
+        <p>Clip concept lines + hook starters & recommended length band (7–15s / 15–30s / 30–45s).</p>
+      </div>
+      <div class="card">
+        <div class="icon">💡</div><h3>Repurposing</h3>
+        <p>Suggests micro‑threads / carousel bullet seeds from long-form to stretch one video into multiple posts.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📊</div><h3>Priority Focus</h3>
+        <p>Identifies “high highlight density” ranges ideal for clipping (long form only).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how" aria-labelledby="how-title">
+    <h2 id="how-title">How It Works</h2>
+    <p class="section-lead">Unified flow for any link—slightly different branches for long vs short content.</p>
+    <div class="steps">
+      <div class="step"><strong>1. Submit</strong><p>Drop URL + email + content type (long / short).</p></div>
+      <div class="step"><strong>2. Transcribe</strong><p>Audio extracted & transcribed; short video path skips chapter logic.</p></div>
+      <div class="step"><strong>3. Generate</strong><p>Titles, hooks, clip ideas, SEO copy & optional translation.</p></div>
+      <div class="step"><strong>4. Deliver</strong><p>Pack emailed (JSON + text files + SRT). Roadmap: instant download page & history.</p></div>
+    </div>
+  </section>
+
+  <!-- EXAMPLES -->
+  <section class="section" id="example" aria-labelledby="example-title">
+    <h2 id="example-title">Example Outputs (Samples)</h2>
+    <p class="section-lead">Placeholder synthetic snippets until you replace with real anonymized creator packs. Provide one long form and one short form sample.</p>
+    <div class="example-wrap">
+      <div class="example-box">
+        <h3 style="margin:.2rem 0 .4rem;">Long‑Form Pack (Excerpt)</h3>
+<pre class="code-sample">{
+ "source_type":"youtube",
+ "duration_min":27,
+ "chapters":[
+  {"t":"00:00","title":"Why It Matters"},
+  {"t":"02:45","title":"Setup"},
+  {"t":"07:20","title":"Core Demo"},
+  {"t":"15:05","title":"Optimization"},
+  {"t":"22:10","title":"Wrap Up"}
+ ],
+ "seo_description":"(2 paragraphs...)",
+ "keywords":["workflow automation","fast setup","time saver","creator tips","optimization"],
+ "title_variants":["Automate X in 10 Minutes","Stop Wasting Time on X","The Fastest Way to X","X Setup: From Zero to Done","Before You Build X, Do This"],
+ "hooks":["You can do this before coffee cools","Skip the 3 mistakes killing your setup","Watch me compress hours into minutes","This one tweak changed everything","Most people overcomplicate this"],
+ "shorts_concepts":[
+  {"idea":"Speedrun setup","src":"02:45-03:30"},
+  {"idea":"Common mistake","src":"07:20-08:05"}
+ ],
+ "captions":{"en":"...SRT...","es":"...SRT..."}
+}</pre>
+      </div>
+      <div class="example-box">
+        <h3 style="margin:.2rem 0 .4rem;">Short‑Form Booster (Excerpt)</h3>
+<pre class="code-sample">{
+ "source_type":"tiktok",
+ "duration_sec":42,
+ "transcript_excerpt":"...",
+ "title_variants":[
+  "Your Posture Fix in 30s",
+  "Stop This 1 Gym Mistake",
+  "Do This Before Your Set",
+  "Faster Gains with 1 Adjustment",
+  "Level Up Your Form Today"
+ ],
+ "hooks":[
+  "You're probably doing this wrong",
+  "Fix this before your next rep",
+  "This tweak = instant stability",
+  "Stop losing power here",
+  "Most lifters miss this"
+ ],
+ "repurpose_suggestions":[
+  "IG caption bullet list",
+  "Carousel: 3 frames: Problem / Fix / Result"
+ ],
+ "recommended_clip_angles":[ "Front 45°","Side profile" ],
+ "captions":{"en":"...SRT..."}
+}</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing" aria-labelledby="pricing-title">
+    <h2 id="pricing-title">Pricing (Beta)</h2>
+    <p class="section-lead">Creator‑friendly: prove value first. Lock the early adopter rate before full automation & advanced features roll out.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>Free</h3>
+        <div class="price">$0<span>/ one slot</span></div>
+        <ul class="features">
+          <li>1 video (long OR short)</li>
+          <li>Transcript (EN)</li>
+          <li>Chapters (if long)</li>
+          <li>Preview of premium items (blurred)</li>
+        </ul>
+        <a class="cta-btn" href="#process">Use Free Slot</a>
+      </div>
+      <div class="price-card highlight">
+        <h3>Beta Plan</h3>
+        <div class="price">$9<span>/ month</span></div>
+        <ul class="features">
+          <li>Up to 5 videos / month</li>
+          <li>Full content pack (all outputs)</li>
+          <li>Bilingual captions (EN + 1)</li>
+          <li>Priority queue</li>
+          <li>Locked price post‑launch</li>
+        </ul>
+        <a class="cta-btn" href="STRIPE_CHECKOUT_LINK" target="_blank" rel="noopener">Lock Beta Price</a>
+      </div>
+      <div class="price-card">
+        <h3>Planned Pro</h3>
+        <div class="price">?</div>
+        <ul class="features">
+          <li>20+ videos / month</li>
+          <li>Brand tone memory</li>
+          <li>API & webhook</li>
+          <li>Multi-language expansion</li>
+          <li>Team seats</li>
+        </ul>
+        <span style="font-size:.65rem;color:var(--text-dim);">Influenced by early feedback.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <h2 id="faq-title">FAQ</h2>
+    <p class="section-lead">Common early questions across niches (fitness, coding, language, lifestyle, coaching, finance etc.).</p>
+    <div class="faq-grid">
+      <div class="faq"><h3>Does it only work for tutorials?</h3><p>No—any clear spoken content (fitness tips, lifestyle advice, business breakdowns, etc.). Chapters auto only if video is long enough.</p></div>
+      <div class="faq"><h3>Works for TikTok & Reels?</h3><p>Yes—short videos skip the chapter step and generate booster assets (hooks, variants, repurpose suggestions).</p></div>
+      <div class="faq"><h3>Private / unlisted videos?</h3><p>Unlisted accessible URLs work. Private videos requiring auth are not supported in MVP.</p></div>
+      <div class="faq"><h3>Why one free video?</h3><p>Enough to prove time saved & output quality before you decide to continue.</p></div>
+      <div class="faq"><h3>Accuracy & clean-up?</h3><p>We do a manual pass during early beta to polish obvious errors & formatting.</p></div>
+      <div class="faq"><h3>Languages for captions?</h3><p>English base + Spanish first. More languages prioritized by user votes.</p></div>
+      <div class="faq"><h3>Will price change later?</h3><p>Yes. Beta users keep $9 as long as subscription remains active.</p></div>
+      <div class="faq"><h3>Need channel logins?</h3><p>No logins or API keys required for MVP—just the video link.</p></div>
+    </div>
+  </section>
+
+  <!-- EMAIL CAPTURE -->
+  <section class="section" id="signup" aria-labelledby="signup-title" style="margin-top:3.9rem;">
+    <h2 id="signup-title">Early Updates List</h2>
+    <p class="section-lead">Want automation + feature rollout notices? Get concise update emails (no spam).</p>
+    <div class="panel" style="max-width:560px;">
+      <form id="capture" action="FORM_ENDPOINT_EMAIL" method="POST" novalidate>
+        <label for="cap-email">Email</label>
+        <div class="inline">
+          <input id="cap-email" name="email" type="email" placeholder="you@example.com" required>
+          <button type="submit">Get Updates</button>
+        </div>
+        <div class="error" id="cap-error">Enter a valid email.</div>
+        <div class="success" id="cap-success">Subscribed! Check inbox.</div>
+        <p class="msg">Only milestone or feature release messages. Unsubscribe anytime.</p>
+      </form>
+    </div>
+  </section>
+
 </main>
 
 <footer>
-  © <span id="year"></span> Chaptiva. All rights reserved.
-  · <a href="mailto:contact@chaptiva.app">Contact</a>
+  <div class="foot">
+    <div>
+      <strong style="background:var(--gradient);-webkit-background-clip:text;color:transparent;display:inline-block;">Chaptiva</strong>
+      <p style="font-size:.74rem;line-height:1.45;color:var(--text-dim);margin:.65rem 0 0;">
+        Multi‑platform content pack automation for creators. Not affiliated with YouTube, TikTok, Instagram or Meta. Built to eliminate repetitive post‑production grunt work.
+      </p>
+    </div>
+    <nav aria-label="Footer navigation">
+      <a href="#features">Outputs</a>
+      <a href="#platform">Platform Layer</a>
+      <a href="#how">How It Works</a>
+      <a href="#example">Examples</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <nav aria-label="Legal">
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="mailto:contact@chaptiva.app">Contact</a>
+    </nav>
+  </div>
+  <small>© <span id="year"></span> Chaptiva. All rights reserved.</small>
 </footer>
 
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
-// (Optional future) Replace alert form handler with fetch() to your API or form service.
+
+/* Smooth Scroll */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const id=a.getAttribute('href').slice(1);
+    if(!id) return;
+    const el=document.getElementById(id);
+    if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'});}
+  });
+});
+
+function validEmail(e){return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e);}
+function validVideo(u){
+  // Basic match for YouTube / youtu.be / TikTok / Instagram
+  return /(youtube\.com\/watch\?v=|youtu\.be\/|tiktok\.com\/|instagram\.com\/reel\/)/i.test(u);
+}
+
+function attachForm(formId, emailId, successId, errorId, extraFn){
+  const form=document.getElementById(formId);
+  if(!form) return;
+  const email=document.getElementById(emailId);
+  const success=document.getElementById(successId);
+  const error=document.getElementById(errorId);
+
+  form.addEventListener('submit', (e)=>{
+    if(form.action.includes("FORM_ENDPOINT")) e.preventDefault(); // placeholder until you add real endpoint
+    error.style.display='none'; success.style.display='none';
+    const emailVal=email ? email.value.trim() : "";
+    const extraOk = extraFn ? extraFn() : true;
+    if(!validEmail(emailVal) || !extraOk){
+      error.style.display='block';
+      return;
+    }
+    success.style.display='block';
+    // Real endpoint path:
+    // e.preventDefault();
+    // const fd=new FormData(form);
+    // fetch(form.action,{method:'POST',body:fd});
+  });
+}
+
+attachForm('process-form','proc-email','proc-success','proc-error',()=>validVideo(document.getElementById('video-url').value.trim()));
+attachForm('capture','cap-email','cap-success','cap-error',null);
+
 </script>
+
+<!--
+TODO LIST (Multi-Platform Edition):
+1. Replace FORM_ENDPOINT_PROCESS & FORM_ENDPOINT_EMAIL with form service endpoints.
+2. Add STRIPE_CHECKOUT_LINK for Beta Plan.
+3. Upload og-image.png (1200x630) + real sample-pack images (long-form & short-form).
+4. Replace example JSON with real anonymized outputs when available.
+5. Update meta description/OG image if branding evolves.
+-->
 </body>
 </html>
