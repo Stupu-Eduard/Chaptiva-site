@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#172534"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f8cff"/>
+      <stop offset="60%" stop-color="#7b5fff"/>
+      <stop offset="100%" stop-color="#b86bff"/>
+    </linearGradient>
+    <style>
+      .h1{font:600 44px/1.2 'Inter',system-ui,sans-serif;fill:url(#g2);}
+      .h2{font:600 26px/1.2 'Inter',system-ui,sans-serif;fill:#ffffff;}
+      .mono{font:500 18px/1.5 ui-monospace,Consolas,Menlo,monospace;fill:#9cb6cb;}
+      .small{font:600 14px/1 'Inter',system-ui,sans-serif;fill:#6d8296;letter-spacing:2px;text-transform:uppercase;}
+    </style>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg2)"/>
+  <circle cx="1080" cy="120" r="260" fill="#7b5fff" opacity=".12"/>
+  <text x="60" y="100" class="h1">Short‑Form Booster</text>
+  <text x="60" y="145" class="small">VIDEO</text>
+  <text x="60" y="175" class="mono">platform: "tiktok"   duration_sec: 42   niche: "fitness"</text>
+
+  <text x="60" y="225" class="h2">Title Variants</text>
+  <text x="60" y="260" class="mono">1. Your Posture Fix in 30s</text>
+  <text x="60" y="285" class="mono">2. Stop This 1 Gym Mistake</text>
+  <text x="60" y="310" class="mono">3. Do This Before Your Set</text>
+  <text x="60" y="335" class="mono">4. Faster Gains: 1 Adjustment</text>
+  <text x="60" y="360" class="mono">5. Level Up Your Form Today</text>
+
+  <text x="620" y="225" class="h2">Hooks</text>
+  <text x="620" y="260" class="mono">• You're probably doing this wrong</text>
+  <text x="620" y="285" class="mono">• Fix this before your next rep</text>
+  <text x="620" y="310" class="mono">• This tweak = instant stability</text>
+  <text x="620" y="335" class="mono">• Stop losing power here</text>
+  <text x="620" y="360" class="mono">• Most lifters miss this</text>
+
+  <text x="60" y="420" class="h2">Repurpose Suggestions</text>
+  <text x="60" y="455" class="mono">• IG carousel: Problem / Fix / Result</text>
+  <text x="60" y="480" class="mono">• Twitter thread: 3 form cues + rationale</text>
+  <text x="60" y="505" class="mono">• Caption bullet list: cues + benefits</text>
+
+  <text x="60" y="560" class="h2">Captions</text>
+  <text x="60" y="595" class="mono">en: "...SRT..."</text>
+
+  <text x="60" y="650" class="mono" fill="#6d8296">Short videos skip chapter generation. Focus = hooks + variants + repurpose ideas.</text>
+  <text x="60" y="720" class="mono" fill="#9cb6cb">Add real screenshot after first packs.</text>
+</svg>
