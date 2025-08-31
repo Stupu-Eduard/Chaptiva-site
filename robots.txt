@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://chaptiva.app/sitemap.xml
