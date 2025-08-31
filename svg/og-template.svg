@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f8cff"/>
+      <stop offset="55%" stop-color="#7b5fff"/>
+      <stop offset="100%" stop-color="#b86bff"/>
+    </linearGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#141d29"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1050" cy="90" r="300" fill="#7b5fff" opacity=".08"/>
+  <text x="70" y="210" font-family="Inter,Arial,system-ui" font-size="82" font-weight="700" fill="url(#g)">Chaptiva</text>
+  <text x="70" y="295" font-family="Inter,Arial,system-ui" font-size="38" font-weight="600" fill="#ffffff">Multi‑Platform Video Content Pack in 2 Minutes</text>
+  <text x="70" y="355" font-family="Inter,Arial,system-ui" font-size="28" fill="#94a3b8">Transcript • Chapters • Hooks • Titles • Shorts Ideas • Captions</text>
+  <rect x="70" y="400" width="640" height="150" rx="22" fill="#161f29" stroke="#293746"/>
+  <text x="105" y="455" font-family="Inter,Arial,system-ui" font-size="24" fill="#b9c4cf">Example Outputs:</text>
+  <text x="105" y="490" font-family="ui-monospace,Menlo,monospace" font-size="20" fill="#7aa8ff">
+    { "title_variants": 5, "hooks": 5, "shorts_ideas": 5 }
+  </text>
+</svg>
