@@ -1,0 +1,24 @@
+{
+  "name": "Chaptiva - Video Content Pack Generator",
+  "short_name": "Chaptiva",
+  "description": "Turn any video into a ready-to-publish content pack in 2 minutes",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d1117",
+  "theme_color": "#0d1117",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["productivity", "utilities", "business"],
+  "orientation": "portrait-primary"
+}
