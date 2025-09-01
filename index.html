@@ -210,7 +210,7 @@ footer a:hover{text-decoration:underline;}
     <h2 id="process-title">Process a Video (Manual Beta)</h2>
     <p class="section-lead">Week 1 = manual polish; automation is staging. Submit any public or unlisted video URL (YouTube, TikTok, Instagram Reel, Shorts). We’ll generate the pack and email it back if capacity allows.</p>
     <div class="panel" style="max-width:720px;">
-      <form id="process-form" action="https://formspree.io/f/contact" method="POST" novalidate>
+      <form id="process-form" action="https://formspree.io/f/xldejpzr" method="POST" novalidate>
         <input type="hidden" name="_subject" value="Video Processing Request">
         <input type="hidden" name="form_type" value="video_processing">
         <label for="youtube">Video URL (YouTube / TikTok / Instagram)</label>
@@ -435,7 +435,7 @@ footer a:hover{text-decoration:underline;}
           <li>Priority queue</li>
           <li>Locked price post‑launch</li>
         </ul>
-        <a class="cta-btn" href="#beta-signup" onclick="document.getElementById('beta-signup-form').style.display='block'; document.getElementById('beta-signup-form').scrollIntoView({behavior:'smooth'}); return false;">Lock Beta Price</a>
+        <a class="cta-btn" href="#beta-signup" onclick="showBetaSignup(); return false;">Lock Beta Price</a>
       </div>
       <div class="price-card">
         <h3>Planned Pro</h3>
@@ -447,7 +447,7 @@ footer a:hover{text-decoration:underline;}
           <li>Multi-language expansion</li>
           <li>Team seats</li>
         </ul>
-        <a class="cta-btn" href="#" onclick="alert('Pro plan coming soon! Join our beta first to get early access.'); return false;">Coming Soon</a>
+        <a class="cta-btn" href="#" onclick="handleProPlan(); return false;">Join Waitlist</a>
         <span style="font-size:.65rem;color:var(--text-dim);">Influenced by early feedback.</span>
       </div>
     </div>
@@ -455,22 +455,38 @@ footer a:hover{text-decoration:underline;}
 
   <!-- BETA SIGNUP FORM -->
   <section class="section" id="beta-signup-form" style="margin-top:2rem;display:none;">
-    <h2>Beta Plan Interest</h2>
-    <p class="section-lead">Join the waitlist for our Beta Plan and lock in the early adopter price of $9/month.</p>
-    <div class="panel" style="max-width:600px;">
-      <form id="beta-form" action="https://formspree.io/f/contact" method="POST" novalidate>
-        <input type="hidden" name="_subject" value="Beta Plan Interest">
-        <input type="hidden" name="form_type" value="beta_signup">
-        <label for="beta-email">Email</label>
-        <div class="inline">
-          <input id="beta-email" name="email" type="email" placeholder="you@example.com" required>
-          <button type="submit">Join Beta Waitlist</button>
+    <h2>Beta Plan - $9/month</h2>
+    <p class="section-lead">Join our Beta Plan and lock in the early adopter price. Choose your preferred signup method:</p>
+    <div class="pricing-grid">
+      <div class="panel" style="max-width:500px;">
+        <h3 style="margin:0 0 1rem;">Option 1: Waitlist (Recommended)</h3>
+        <p style="font-size:.85rem;color:var(--text-dim);margin-bottom:1.5rem;">Join the waitlist and we'll contact you with payment details when your spot is ready.</p>
+        <form id="beta-form" action="https://formspree.io/f/xldejpzr" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="Beta Plan Waitlist">
+          <input type="hidden" name="form_type" value="beta_waitlist">
+          <label for="beta-email">Email</label>
+          <div class="inline">
+            <input id="beta-email" name="email" type="email" placeholder="you@example.com" required>
+            <button type="submit">Join Waitlist</button>
+          </div>
+          <div class="error" id="beta-error">Enter a valid email address.</div>
+          <div class="success" id="beta-success">Thanks! We'll contact you when your Beta Plan spot is ready.</div>
+        </form>
+      </div>
+      <div class="panel" style="max-width:500px;">
+        <h3 style="margin:0 0 1rem;">Option 2: Pay Now</h3>
+        <p style="font-size:.85rem;color:var(--text-dim);margin-bottom:1.5rem;">Secure your Beta Plan spot immediately with Stripe.</p>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <button class="cta-btn" onclick="redirectToStripe()" style="justify-content:center;">
+            Pay $9/month with Stripe
+          </button>
+          <p style="font-size:.7rem;color:var(--text-dim);margin:0;text-align:center;">
+            Secure payment via Stripe. Cancel anytime.
+          </p>
         </div>
-        <div class="error" id="beta-error">Enter a valid email address.</div>
-        <div class="success" id="beta-success">Thanks! We'll contact you when Beta Plan is available.</div>
-        <p class="msg">We'll notify you when the Beta Plan is ready and send payment details.</p>
-      </form>
+      </div>
     </div>
+    <p class="msg" style="margin-top:1.5rem;">Beta users keep the $9/month price permanently as long as subscription remains active.</p>
   </section>
 
   <!-- FAQ -->
@@ -494,7 +510,7 @@ footer a:hover{text-decoration:underline;}
     <h2 id="signup-title">Early Updates List</h2>
     <p class="section-lead">Want automation + feature rollout notices? Get concise update emails (no spam).</p>
     <div class="panel" style="max-width:560px;">
-      <form id="capture" action="https://formspree.io/f/updates" method="POST" novalidate>
+      <form id="capture" action="https://formspree.io/f/xldejpzr" method="POST" novalidate>
         <input type="hidden" name="_subject" value="Newsletter Subscription">
         <input type="hidden" name="form_type" value="newsletter">
         <label for="cap-email">Email</label>
@@ -551,8 +567,28 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 
 function validEmail(e){return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e);}
 function validVideo(u){
-  // Basic match for YouTube / youtu.be / TikTok / Instagram
-  return /(youtube\.com\/watch\?v=|youtu\.be\/|tiktok\.com\/|instagram\.com\/reel\/)/i.test(u);
+  // Improved video URL validation with more formats
+  const videoPatterns = [
+    // YouTube
+    /youtube\.com\/watch\?v=/i,
+    /youtu\.be\//i,
+    /youtube\.com\/embed\//i,
+    /youtube\.com\/v\//i,
+    /m\.youtube\.com\/watch\?v=/i,
+    // TikTok
+    /tiktok\.com\//i,
+    /vm\.tiktok\.com\//i,
+    // Instagram
+    /instagram\.com\/reel\//i,
+    /instagram\.com\/p\//i,
+    /instagram\.com\/tv\//i,
+    // Vimeo
+    /vimeo\.com\//i,
+    // Twitter/X
+    /twitter\.com\/.*\/status\//i,
+    /x\.com\/.*\/status\//i
+  ];
+  return videoPatterns.some(pattern => pattern.test(u));
 }
 
 function attachForm(formId, emailId, successId, errorId, extraFn){
@@ -567,10 +603,25 @@ function attachForm(formId, emailId, successId, errorId, extraFn){
     error.style.display='none'; success.style.display='none';
     const emailVal=email ? email.value.trim() : "";
     const extraOk = extraFn ? extraFn() : true;
-    if(!validEmail(emailVal) || !extraOk){
+    
+    // Validation check first
+    if(!validEmail(emailVal)){
+      error.textContent = 'Please enter a valid email address.';
       error.style.display='block';
       return;
     }
+    
+    if(!extraOk){
+      error.textContent = 'Please enter a valid video URL from YouTube, TikTok, Instagram, or Vimeo.';
+      error.style.display='block';
+      return;
+    }
+    
+    // Show submitting state
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Submitting...';
+    submitBtn.disabled = true;
     
     try {
       const fd=new FormData(form);
@@ -579,10 +630,15 @@ function attachForm(formId, emailId, successId, errorId, extraFn){
         success.style.display='block';
         form.reset();
       } else {
+        error.textContent = 'Server error. Please try again later or contact support.';
         error.style.display='block';
       }
     } catch(err) {
+      error.textContent = 'Network error. Please check your connection and try again.';
       error.style.display='block';
+    } finally {
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
     }
   });
 }
@@ -590,6 +646,26 @@ function attachForm(formId, emailId, successId, errorId, extraFn){
 attachForm('process-form','proc-email','proc-success','proc-error',()=>validVideo(document.getElementById('video-url').value.trim()));
 attachForm('capture','cap-email','cap-success','cap-error',null);
 attachForm('beta-form','beta-email','beta-success','beta-error',null);
+
+// Payment and signup functions
+function showBetaSignup() {
+  const form = document.getElementById('beta-signup-form');
+  form.style.display = 'block';
+  form.scrollIntoView({behavior: 'smooth'});
+}
+
+function handleProPlan() {
+  alert('Pro plan coming Q2 2025! Join our Beta first to get early access and priority migration.');
+}
+
+function redirectToStripe() {
+  // For now, show a message about setting up Stripe
+  // Replace this URL with actual Stripe payment link when ready
+  alert('Stripe integration coming soon! For now, please use the waitlist option and we\'ll contact you with payment details.');
+  
+  // When ready, replace alert with:
+  // window.open('https://buy.stripe.com/your-payment-link', '_blank');
+}
 
 </script>
 
